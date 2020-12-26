@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 from collections import deque
 
 import telepot
@@ -88,6 +90,7 @@ MessageLoop(bot,{'chat' : handle,'callback_query' : query_ans}).run_as_thread()
 
 
 while 1:
+    time.sleep(1)
     link_list = deque(maxlen=40)
     chek_list = []
     while loop:
@@ -97,18 +100,18 @@ while 1:
         for i in remak:
             if i not in link_list:
                 test_list.append(i)
-                chek_list.append(i[1])
                 print(i, "를 test에 추가 하였습니다.")
             else:
                 print(i, "는 이미 보냈음")
         for i in test_list:
             try:
-                bot.sendMessage(mc, text=i[1])
-                link_list.append(i)
-                time.sleep(3)
+                if loop == 1 :
+                    bot.sendMessage(mc, text=i[1])
+                    link_list.append(i)
+                    time.sleep(3)
+                else:break
             except Exception as e:
                 print(e)
                 print(type(e))
-        print(len(chek_list) - len(set(chek_list)))
     pass
 
