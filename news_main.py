@@ -7,6 +7,7 @@ from telepot.loop import MessageLoop
 from telepot.namedtuple import InlineKeyboardButton as BT
 from telepot.namedtuple import InlineKeyboardMarkup as MU
 from news_return import *
+import time
 
 token = '1476250644:AAEtz9YtAC88FNiY5AwWUKjdZEnUAGTVdjA'
 #mc = '1269898121'
@@ -91,7 +92,7 @@ MessageLoop(bot,{'chat' : handle,'callback_query' : query_ans}).run_as_thread()
 
 while 1:
     time.sleep(1)
-    link_list = deque(maxlen=40)
+    link_list = deque(maxlen=60)
     chek_list = []
     while loop:
         time.sleep(3)
