@@ -92,7 +92,7 @@ MessageLoop(bot,{'chat' : handle,'callback_query' : query_ans}).run_as_thread()
 
 while 1:
     time.sleep(1)
-    link_list = deque(maxlen=200)
+    link_list = deque(maxlen=100)
     chek_list = []
     while loop:
         time.sleep(3)
